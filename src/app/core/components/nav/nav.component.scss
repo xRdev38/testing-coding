@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  width: 10%;
+  color: #212529;
+  background-color: #f8f9fa;
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
