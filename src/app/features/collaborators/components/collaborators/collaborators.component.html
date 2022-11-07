@@ -1,0 +1,4 @@
+<div class="table-responsive">
+  <app-table [columns]="(columns$ | async) ?? []" [data]="(collaborators$ | async) ?? []"></app-table>
+</div>
+
