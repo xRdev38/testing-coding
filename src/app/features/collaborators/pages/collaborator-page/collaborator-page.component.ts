@@ -33,9 +33,14 @@ export class CollaboratorPageComponent extends BaseComponent {
 
   private static getKeysForColumns(collaborator: Collaborator): string[] {
     return (
-      Object.keys(collaborator).filter(
-        key => key.toLocaleLowerCase() !== 'actions'
-      ) ?? []
+      Object.keys(collaborator)
+        .filter(key => key.toLowerCase() !== 'actions')
+        .map(
+          value =>
+            `${value.charAt(0).toUpperCase()}${value
+              .substring(1)
+              .toLowerCase()}`
+        ) ?? []
     );
   }
 }
