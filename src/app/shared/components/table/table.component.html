@@ -1,16 +1,16 @@
-<table class="table table-striped table-sm">
-  <thead>
-    <tr>
-      <ng-container *ngIf="columns$ | async as columns">
-        <th *ngFor="let column of columns; trackBy: trackByColumn" scope="col">
-          {{ column }}
-        </th>
-      </ng-container>
-    </tr>
-  </thead>
-  <tbody>
-    <ng-container *ngIf="data$ | async as data">
-      <tr *ngFor="let element of data; index as i">
+<ng-container *ngIf="data$ | async as data">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <ng-container *ngIf="columns$ | async as columns">
+          <th *ngFor="let column of columns; trackBy: trackByColumn" scope="col">
+            {{ column }}
+          </th>
+        </ng-container>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let element of data; index as i; trackBy: trackByElement">
         <td>{{ element?.name }}</td>
         <td>{{ element?.email }}</td>
         <td>{{ element?.tel }}</td>
@@ -19,6 +19,6 @@
         <td>{{ element?.Statut }}</td>
         <td>{{ element?.CreartionDate }}</td>
       </tr>
-    </ng-container>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</ng-container>

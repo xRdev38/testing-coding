@@ -36,4 +36,8 @@ export class TableComponent extends BaseComponent {
   trackByColumn(index: number, column: string): string {
     return `${index}-${column}`;
   }
+
+  trackByElement(index: number, collaborator: Collaborator): string {
+    return `${index}-${collaborator.name}`;
+  }
 }
